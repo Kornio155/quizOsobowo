@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+    android:id="@+id/timerCounter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Pozostało 30 sekund"
+    android:textSize="30sp"/>
+
+    <RadioGroup
+        android:id="@+id/jedzonko"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#dbeceb"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Co wolisz?"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza"
+            />
+
+        <RadioButton
+            android:id="@+id/kebab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kebab"
+            />
+
+        <RadioButton
+            android:id="@+id/burger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Burger"
+            />
+    </RadioGroup>
+    <RadioGroup
+        android:id="@+id/platki"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#dbeceb"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/pytanie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Co pierwsze?"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/Nmleko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Najpierw mleko"
+            />
+
+        <RadioButton
+            android:id="@+id/Nplatki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Najpierw platki"
+            />
+
+        <RadioButton
+            android:id="@+id/nic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nie jem platkow"
+            />
+    </RadioGroup>
+    <Spinner
+        android:id="@+id/spinnerColors"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="22dp"
+        android:popupBackground="#b2ebe7"
+        android:background="#dbeceb"
+        />
+
+
+
+</LinearLayout>
