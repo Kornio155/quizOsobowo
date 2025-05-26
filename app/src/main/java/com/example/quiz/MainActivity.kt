@@ -6,7 +6,9 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.CheckBox
 import android.widget.LinearLayout
+import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -26,6 +28,16 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
 
+
+        }
+        val myCheckBox = findViewById<CheckBox>(R.id.checkBox)
+        val myTextView = findViewById<TextView>(R.id.textview)
+        myCheckBox.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                myTextView.text = "Zaznaczone"
+            } else {
+                myTextView.text ="Odznaczone"
+            }
 
         }
         lateinit var timerTextView: TextView
