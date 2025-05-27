@@ -1,14 +1,17 @@
 package com.example.quiz
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.LinearLayout
-import android.widget.SeekBar
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -91,6 +94,30 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
+        }
+
+        val radioGroup = findViewById<RadioGroup>(R.id.platki)
+        val button = findViewById<Button>(R.id.button_submit)
+        button.setOnClickListener {
+            val selectedId = radioGroup.checkedRadioButtonId
+
+            if (selectedId != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(selectedId)
+                val odpowiedz = selectedRadioButton.text.toString()
+
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("odpowiedz", odpowiedz)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Proszę zaznaczyć odpowiedź!", Toast.LENGTH_SHORT).show()
+            }
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_second)
+
+            val odpowiedz = intent.getStringExtra("odpowiedz")
+
+            val wynikTextView = findViewById<TextView>(R.id.wynik)
+            wynikTextView.text = "Wybrałeś: $odpowiedz"
 
 
 
